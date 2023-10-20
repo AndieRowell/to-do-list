@@ -14,9 +14,9 @@ import {
 import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-import ToDoInput from "./to-do-list/app/components/input-field.js";
+//import "@fontsource/roboto/500.css";
+//import "@fontsource/roboto/700.css";
+import ToDoInput from "./components/input-field";
 
 export default function Home() {
   const [todos, setTodos] = React.useState([]); //i know there's something here about react.useState i forgot about....

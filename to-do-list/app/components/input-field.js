@@ -9,20 +9,23 @@ const ToDoInput = ({ onAddTodo, todos }) => {
         if (todo.trim()) {
             onAddTodo(todo);
             setTodo("");
+        }
+    };
 
     return (
     <Box sx={{ display: "flex"}}>
         <TextField
-        id="outlined secondary"
-        fullWidth
-        label="To Do"
-        color="secondary"
-        margin="normal"
-        focused
-        onChange={(e) => setTodo(e.target.value)}/>
-    <TodoButton onclick={handleAddTodo} />
+            id="outlined secondary"
+            fullWidth
+            label="To Do"
+            color="secondary"
+            margin="normal"
+            focused
+            onChange={(e) => setTodo(e.target.value)}
+        />
+        <TodoButton onclick={handleAddTodo} />
     </Box>
     );
 };
 
-export default ToDoInput;
+//export default ToDoInput;
