@@ -104,6 +104,9 @@ export default function Home() {
         </ButtonGroup>
         {/* </Container> */}
       </Box>
+      {todos.map((todo) => <di)}
+      //still need to render the todos ---- using .map?
+
     </main>
   );
 }
