@@ -6,17 +6,19 @@ const ToDoInput = ({ onAddTodo }) => {
 
     const handleAddTodo = () => {
         if (todo.trim()) {
-            onAddTodo()
-        }
-        const newTodo = event.target.value;
-        setTodo(newTodo);
-        //
-
-    }
-
-
+            onAddTodo(todo);
+            setTodo("");
 
     return (
-        <TextField type="text" onChange={(e) => setTodo(e.target.value)} value={todo}/>
-    )
-}
+        <TextField
+        id="outlined secondary"
+        fullWidth
+        label="To Do"
+        color="secondary"
+        margin="normal"
+        focused
+        onChange={(e) => setTodo(e.target.value)}/>
+    );
+};
+
+export default ToDoInput;
