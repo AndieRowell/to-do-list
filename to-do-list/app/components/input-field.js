@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { TextField } from '@mui/material';
+import TodoButton from "./button";
 
-const ToDoInput = ({ onAddTodo }) => {
+const ToDoInput = ({ onAddTodo, todos }) => {
     const [todo, setTodo] = useState("");
 
     const handleAddTodo = () => {
@@ -10,6 +11,7 @@ const ToDoInput = ({ onAddTodo }) => {
             setTodo("");
 
     return (
+    <Box sx={{ display: "flex"}}>
         <TextField
         id="outlined secondary"
         fullWidth
@@ -18,6 +20,8 @@ const ToDoInput = ({ onAddTodo }) => {
         margin="normal"
         focused
         onChange={(e) => setTodo(e.target.value)}/>
+    <TodoButton onclick={handleAddTodo} />
+    </Box>
     );
 };
 
