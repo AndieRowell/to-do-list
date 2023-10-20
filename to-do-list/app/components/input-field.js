@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { TextField } from '@mui/material';
+import { TextField, Box } from '@mui/material';
 import TodoButton from "./button";
 
 const ToDoInput = ({ onAddTodo, todos }) => {
@@ -23,9 +23,9 @@ const ToDoInput = ({ onAddTodo, todos }) => {
             focused
             onChange={(e) => setTodo(e.target.value)}
         />
-        <TodoButton onclick={handleAddTodo} />
+        <TodoButton onClick={handleAddTodo} />
     </Box>
     );
 };
 
-//export default ToDoInput;
+export default ToDoInput;
