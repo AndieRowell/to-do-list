@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 //import styles from './page.module.css'
 import {
   Typography,
-  Container,
+  //Container,
   TextField,
   ButtonGroup,
   Button,
@@ -20,7 +20,7 @@ import ToDoInput from "./components/input-field";
 
 export default function Home() {
   const [todos, setTodos] = React.useState([]); //i know there's something here about react.useState i forgot about....
-  //const [todo, setTodo] = React.useState("")
+  const [todo, setTodo] = React.useState("")
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -50,6 +50,12 @@ export default function Home() {
     saveTodosToLocalStorage(updatedTodos);
   };
 
+  const saveTodosToLocalStorage = (updatedTodos) => {
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    setTodos(updatedTodos);
+    setTodo("");
+  };
+
   // need to use localStorage
   //localStorage.setItem(key, value) - adds pair to storage or updates value if key exists - add todo
   //localStorage.getItem(key) - retrieves value associated with a given key
@@ -68,12 +74,12 @@ export default function Home() {
 
       {/* <Container> */}
       <ToDoInput onAddTodo={handleAddTodo} todos={todos} />
-      <Box sx={{ display: "flex" }}>
+      {/* <Box sx={{ display: "flex" }}>
         <TextField />
         <IconButton>
           <AddBoxOutlinedIcon />
         </IconButton>
-      </Box>
+      </Box> */}
       {/* </Container> */}
       <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
         {/* <Container> */}
